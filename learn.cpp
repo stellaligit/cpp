@@ -15,3 +15,12 @@ int main_1() {
     cout << fixed << setprecision(2) << (float) 8/5 << endl;
     return 0;
 }
+
+int main_2() {
+    const double pi = 3.14159265358979323846;
+    double r, h;
+    cin >> r >> h;
+    // output surface area of cylinder
+    cout << (2*pi*r*h+pi*r*r*2) << endl;
+    return 0;
+}
