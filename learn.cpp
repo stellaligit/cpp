@@ -24,3 +24,12 @@ int main_2() {
     cout << (2*pi*r*h+pi*r*r*2) << endl;
     return 0;
 }
+
+// Q: reverse three digit number's order: 364 --> 463
+int main_3() {
+    int num;
+    cin >> num;
+    //cout << (num%10)*100+(num%100-num%10)+(num/100) << endl;
+    cout << (num%10) << (num%100-num%10)/10 << (num/100) << endl;
+    return 0;
+}
