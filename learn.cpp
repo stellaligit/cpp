@@ -33,3 +33,31 @@ int main_3() {
     cout << (num%10) << (num%100-num%10)/10 << (num/100) << endl;
     return 0;
 }
+
+// Q: output two numbers swapped: 24 59 --> 59 24
+int main_4() {
+    int one;
+    int two;
+    cin >> one >> two;
+    one = one + two;
+    two = one - two;
+    one = one - two;
+    cout << one << ' ' << two << endl;
+    return 0;
+}
+
+/*
+
+a         b
+
+11        14
+11 + 14,  14
+11 + 14,  11+14-14
+11+14-11, 11
+14        11
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+*/
