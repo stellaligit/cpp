@@ -61,3 +61,19 @@ b = a - b;
 a = a - b;
 
 */
+
+// Q: given the total number of heads and legs, find how many chickens and rabbits there are. If it is impossible, output "no answer."
+int main_5() {
+    // n = total heads, m = total legs
+    int n, m;
+    cin >> n >> m;
+    // output chicken, rabbits | or no answer
+    int chicken = (n * 4 - m)/2;
+    if ((m % 2 == 1) || (chicken < 0) || (chicken > n)) {
+        cout << "No answer" << endl;
+    } else {
+        int rabbit = n - chicken;
+        cout << chicken << ' ' << rabbit << endl;
+    }
+    return 0;
+}
