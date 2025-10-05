@@ -77,3 +77,31 @@ int main_5() {
     }
     return 0;
 }
+
+// Q: sort three numbers from least to greatest
+int main_6a() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    if (a > b) {
+        if (a > c) {
+            if (b > c){
+                cout << c << ' ' << b << ' ' << a << endl;
+            } else {
+                cout << b << ' ' << c << ' ' << a << endl;   
+            }
+        } else {
+            cout << b << ' ' << a << ' ' << c << endl;   
+        }
+    } else {
+        if (b > c) {
+            if (a > c){
+                cout << c << ' ' << a << ' ' << b << endl;
+            } else {
+                cout << a << ' ' << c << ' ' << b << endl;   
+            }
+        } else {
+            cout << a << ' ' << b << ' ' << c << endl;   
+        }
+    }
+    return 0;
+}
