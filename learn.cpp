@@ -105,3 +105,21 @@ int main_6a() {
     }
     return 0;
 }
+
+int main_6b() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    if (a > b) {
+        int t = a;
+        a = b;
+        b = t;
+    }
+    if (a > c) {
+        cout << c << ' ' << a << ' ' << b << endl;
+    } else if (b > c) {
+        cout << a << ' ' << c << ' ' << b << endl;
+    } else {
+        cout << a << ' ' << b << ' ' << c << endl;
+    }
+    return 0;
+}
