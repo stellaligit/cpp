@@ -123,3 +123,11 @@ int main_6b() {
     }
     return 0;
 }
+
+// Q: given a temperature in Fahrenheit, calculate the degree in Celsius to 3 decimal points
+int main_7() {
+    float f;
+    cin >> f;
+    cout << fixed << setprecision(3) << 5*(f-32)/9 << endl;
+    return 0;
+}
