@@ -131,3 +131,10 @@ int main_7() {
     cout << fixed << setprecision(3) << 5*(f-32)/9 << endl;
     return 0;
 }
+
+int main_8() {
+    int a;
+    cin >> a;
+    cout << a*(a+1)/2 << endl;
+    return 0;
+}
