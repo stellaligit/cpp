@@ -147,3 +147,15 @@ int main_9() {
     cout << sin(b) << ' ' << cos(b) << endl;
     return 0;
 }
+
+// Q: Cost of a shirt is $95. If you purchase over $300, you get a discount of 15%. Calculate your final amount.
+int main_10() {
+    int shirts;
+    cin >> shirts;
+    float cost = shirts*95;
+    if (cost >= 300) {
+        cost = 0.85*cost;
+    }
+    cout << fixed << setprecision(2) << cost << endl;
+    return 0;
+}
