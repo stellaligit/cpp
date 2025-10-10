@@ -138,3 +138,12 @@ int main_8() {
     cout << a*(a+1)/2 << endl;
     return 0;
 }
+
+// Q: given a degree from 0 degrees to 360 degrees, output the sin() and cos() value of that degree
+int main_9() {
+    int a;
+    cin >> a;
+    double b = a *(M_PI / 180.0); // conversion because standard sin() is in radians in c++
+    cout << sin(b) << ' ' << cos(b) << endl;
+    return 0;
+}
