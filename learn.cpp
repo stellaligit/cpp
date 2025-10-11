@@ -159,3 +159,27 @@ int main_10() {
     cout << fixed << setprecision(2) << cost << endl;
     return 0;
 }
+
+// Q: given three triangle side lengths, solve if they form a triangle and if they form a right angle triangle
+int main_11() {
+    int a, b , c;
+    cin >> a >> b >> c;
+    if (a > b) {
+        int t = a;
+        a = b;
+        b = t;
+    }
+    if (b > c) {
+        int t = b;
+        b = c;
+        c = t;
+    }
+    if (a+b<=c) {
+        cout << "not a triangle" << endl;
+    } else if (a*a + b*b == c*c) {
+        cout << "yes" << endl;
+    } else {
+        cout << "no" << endl;
+    }
+    return 0;
+}
