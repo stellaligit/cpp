@@ -183,3 +183,24 @@ int main_11() {
     }
     return 0;
 }
+
+// Q: Given the year, find if the year is a leap year.
+int main_12a() {
+    int year;
+    cin >> year;
+    // Leap year = divisible by 4, or if divisible by 100 must be divisible by 400
+    if (year % 100 == 0) {
+        if (year % 400 == 0) {
+            cout << "yes" << endl;
+        } else {
+            cout << "no" << endl;
+        }
+    } else {
+        if (year % 4 == 0) {
+            cout << "yes" << endl;
+        } else {
+            cout << "no" << endl;
+        }
+    }
+    return 0;
+}
