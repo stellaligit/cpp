@@ -204,3 +204,22 @@ int main_12a() {
     }
     return 0;
 }
+
+int main_12b() {
+    int year;
+    cin >> year;
+    bool t;
+    if (year % 4 == 0) {
+        if (year % 400 == 0) {
+            t = true;
+        } else if (year % 100 != 0) {
+            t = true;
+        }
+    }
+    if (t) {
+        cout << "yes" << endl;
+    } else {
+        cout << "no" << endl;
+    }
+    return 0;
+}
