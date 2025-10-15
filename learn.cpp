@@ -223,3 +223,12 @@ int main_12b() {
     }
     return 0;
 }
+
+int main_12c() {
+    int year;
+    cin >> year;
+    bool t = (year % 4 == 0 && (year % 400 == 0 || year % 100 != 0));
+    // if t is true then first option, if t is false then second one
+    cout << (t ? "yes" : "no") << endl;
+    return 0;
+}
