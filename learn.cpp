@@ -232,3 +232,17 @@ int main_12c() {
     cout << (t ? "yes" : "no") << endl;
     return 0;
 }
+
+int main_13()
+{
+    int x = 0;
+    int y = 0;
+    bool a = false, b = true;
+    if (a)
+        if (b)
+            y++;
+        else
+            y++;
+            x++;
+    return 0;
+}
