@@ -246,3 +246,14 @@ int main_13()
             x++;
     return 0;
 }
+
+// for loops
+int main_14() {
+    int n, i;
+    cin >> n;
+    for (i = 1; i <= n; i++) {
+        cout << i << endl;
+    }
+    cout << i;
+    return 0;
+}
