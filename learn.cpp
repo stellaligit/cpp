@@ -257,3 +257,14 @@ int main_14() {
     cout << i;
     return 0;
 }
+
+// output all 4 digit perfect squares in the format aabb
+int main_15a() {
+    for (int i = 33; i < 100; i++) {
+        int a = i*i;
+        if ((a/100 % 11 == 0) && (a%100 % 11 == 0)) {
+            cout << a << endl;
+        }
+    }
+    return 0;
+}
