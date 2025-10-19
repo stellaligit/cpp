@@ -268,3 +268,17 @@ int main_15a() {
     }
     return 0;
 }
+
+// another way but in this case its worse
+int main_15b() {
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 0; j <= 9; j++) {
+            int a = (i * 1100) + (j * 11);
+            int b = sqrt(a);
+            if (b * b == a) {
+                cout << a << endl;
+            }
+        }
+    }
+    return 0;
+}
