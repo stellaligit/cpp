@@ -282,3 +282,18 @@ int main_15b() {
     }
     return 0;
 }
+
+// see how many times it takes for a number to become 1 if: if even, divide by 2 | if odd, n = 3n+1
+int main_16a() {
+    for (int b = 3; b <= 20; b++) {
+        int a = b;
+        int counter = 0;
+        while (a != 1) {
+            // (a%2 == 0) ? (a = a/2) : (a = 3*a + 1);
+            a = (a%2 == 0) ? (a/2) : (3*a + 1);
+            counter++;
+        }
+        cout << b << ' ' << counter << endl;
+    }
+    return 0;
+}
