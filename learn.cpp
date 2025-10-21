@@ -297,3 +297,25 @@ int main_16a() {
     }
     return 0;
 }
+
+//for testing out big numbers like 987654321
+int main_16b() {
+    // unsigned int (all positive), long or long long, etc.
+    unsigned int a, counter = 0;
+    // int t = 0;
+    cin >> a;
+    while (a != 1) {
+        // (a%2 == 0) ? (a = a/2) : (a = 3*a + 1);
+        a = (a%2 == 0) ? (a/2) : (3*a + 1);
+        counter++;
+        /*
+        t++;
+        if (t%1000==0) {
+            cout << "step " << t << ' ' << a << endl;
+            break;
+        }
+        */
+    }
+    cout << counter << endl;
+    return 0;
+}
