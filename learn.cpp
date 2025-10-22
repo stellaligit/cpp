@@ -319,3 +319,20 @@ int main_16b() {
     cout << counter << endl;
     return 0;
 }
+
+int main_17() {
+    float value = 0;
+    int count = 0;
+    // can't use "^" for exponents in c++
+    // e means "times ten to the power of"
+    for (int i = 1; i <= 1e6+1; i+=2) {
+        count += 1;
+        if (count%2==0) {
+            value -= 1.0/i;
+        } else {
+            value += 1.0/i;
+        }
+    }
+    cout << value << endl;
+    return 0;
+}
