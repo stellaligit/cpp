@@ -336,3 +336,23 @@ int main_17() {
     cout << value << endl;
     return 0;
 }
+
+// solve x = 1! + 2! + 3! + 4! + ..., given x, but we only want the last 6 digits
+int main_18() {
+    int n;
+    cin >> n;
+    int sum = 0;
+    // for every sum
+    // using some math we can see that every factorial after 25! already ends with "000000 (six zeros)" so we don't need to solve beyond that.
+    for (int i = 1; (i <= n && i <= 25); i++) {
+        int product = 1;
+        // for every "!" calculation
+        for (int j = 1; j <= i; j++) {
+            // always be careful of range
+            product = (product*j)%1000000;
+        }
+        sum = (sum+product)%1000000;
+    }
+    cout << sum << endl;
+    return 0;
+}
