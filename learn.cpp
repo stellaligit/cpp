@@ -356,3 +356,22 @@ int main_18() {
     cout << sum << endl;
     return 0;
 }
+
+int main_19() {
+    int n;
+    cin >> n;
+    int max = 0, min = 1000, sum = 0;
+    int v;
+    for (int i = 1; i<=n; i++) {
+        cin >> v;
+        if (v < min) {
+            min = v;
+        }
+        if (v > max) {
+            max = v;
+        }
+        sum += v;
+    }
+    cout << min << ' ' << max << ' ' << fixed << setprecision(3) << (float) sum/n << endl;
+    return 0;
+}
