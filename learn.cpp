@@ -375,3 +375,13 @@ int main_19() {
     cout << min << ' ' << max << ' ' << fixed << setprecision(3) << (float) sum/n << endl;
     return 0;
 }
+
+int main_20() {
+    int s = 0;
+    for (int i = 0; i < 4; i++) {
+        int s = 1;
+        cout << s << endl;
+    }
+    cout << s;
+    return 0;
+}
