@@ -400,3 +400,30 @@ int main_20a() {
     }
     return 0;
 }
+
+//0 to 99999
+int main_20b() {
+    //5 * 9^3 = 3645
+    //4 * 9^3 = 2916
+    //2^3 + 9^3 + 1^3 + 6^3 = 746 (a 3 digit number)
+    for (int a = 0; a <= 2; a++) {
+        for (int b = 1; b <= 9; b++) {
+            for (int c = 0; c <= 9; c++) {
+                int og_sum = pow(a, 3) + pow(b, 3) + pow(c, 3);
+                /*
+                int num1 = 100*a + 10*b + c;
+                if (num1 == og_sum) {
+                    cout << num1 << endl;
+                }
+                */
+                for (int d = 0; d <= 9; d++) {
+                    int num2 = 1000*a + 100*b + 10*c + d;
+                    if (num2 == og_sum + pow(d, 3)) {
+                        cout << num2 << endl;
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
