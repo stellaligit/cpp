@@ -427,3 +427,23 @@ int main_20b() {
     }
     return 0;
 }
+
+int main_21a() {
+    while (true) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        if (a == -1) break;
+        bool found = false;
+        for (int i = 10; i <= 100; i++) {
+            if (i%7==c && i%5==b && i%3==a) {
+                cout << i << endl;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            cout << "No answer" << endl;
+        }
+    }
+    return 0;
+}
