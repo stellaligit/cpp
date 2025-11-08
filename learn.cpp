@@ -447,3 +447,28 @@ int main_21a() {
     }
     return 0;
 }
+
+int main_21b() {
+    int m[247] = {};
+    for (int i = 0; i <= 3*5*7-1; i++) {
+        int a=i%3;
+        int b=i%5;
+        int c=i%7;
+        int key=100*a+10*b+c;
+        m[key] = i;
+    }
+
+    while (true) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        int key1 = 100*a + 10*b + c;
+        if (a == -1) break;
+
+        if (m[key1] != 0) {
+            cout << m[key1] << endl;
+        } else {
+            cout << "No answer" << endl;
+        }
+    }
+    return 0;
+}
