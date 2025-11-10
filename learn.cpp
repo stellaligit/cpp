@@ -472,3 +472,18 @@ int main_21b() {
     }
     return 0;
 }
+
+// using mamas math thinking
+int main_21c() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    int s;
+    for (int i = 1; i < 100; i++) {
+        if ((2*i+c-b) % 5 == 0 && (i-a+c) % 3 == 0) {
+            s = i;
+            break;
+        }
+    }
+    cout << (7*s + c);
+    return 0;
+}
