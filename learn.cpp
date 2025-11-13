@@ -517,3 +517,29 @@ int main_22b() {
     }
     return 0;
 }
+
+/*
+0 0 n*2-1
+1 1 (n-1)*2-1
+2 2 (n-2)*2-1
+*/
+
+int main_23() {
+    int num = 0;
+    while (true) {
+        int n, m;
+        cin >> n >> m;
+        if (n == 0) {
+            break;
+        }
+
+        double sum = 0;
+        for (long long i = n; i <= m; i++) {
+            sum += 1.0/(i*i);
+            //sum += 1/(double (i)*i);
+        }
+        num += 1;
+        cout << "Case " << num << ": " << fixed << setprecision(5) << sum << endl;
+    }
+    return 0;
+}
