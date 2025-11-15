@@ -543,3 +543,17 @@ int main_23() {
     }
     return 0;
 }
+
+int main_24() {
+    int num = 0;
+    while (true) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        if (a == 0 && c == 0) {
+            break;
+        }
+        num++;
+        cout << "Case " << num << ": " << fixed << setprecision(c) << double(a)/b << endl;
+    }
+    return 0;
+}
