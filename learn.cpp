@@ -557,3 +557,60 @@ int main_24() {
     }
     return 0;
 }
+
+int main_25() {
+    int og;
+    int doub;
+    int trip;
+    for (int a = 1; a <= 3; a++) {
+        for (int b = 1; b <= 9; b++) {
+            if (a == b) {
+                continue;
+            }
+            for (int c = 1; c <= 9; c++) {
+                if (b == c || a == c || c == 5) {
+                    continue;
+                }
+                og = 100*a + 10*b + c;
+                doub = og*2;
+                trip = og*3;
+
+                int d = doub/100;
+                int e = (doub%100)/10;
+                int f = doub%10;
+
+                int g = trip/100;
+                int h = (trip%100)/10;
+                int i = trip%10;
+                
+                int numbers[12] = {0};
+
+                numbers[a] = 1;
+                numbers[b] = 1;
+                numbers[c] = 1;
+                numbers[d] = 1;
+                numbers[e] = 1;
+                numbers[f] = 1;
+                numbers[g] = 1;
+                numbers[h] = 1;
+                numbers[i] = 1;
+
+                bool correct = true;
+                if (numbers[0] == 1) {
+                    correct = false;
+                }
+                for (int j = 1; j < 10; j++) {
+                    if (numbers[j] == 0) {
+                        correct = false;
+                    }
+                }
+
+                if (correct) {
+                    cout << og << ' ' << doub << ' ' << trip << endl;
+                }
+
+            }
+        }
+    }
+    return 0;
+}
