@@ -614,3 +614,22 @@ int main_25() {
     }
     return 0;
 }
+
+// double is not accurate in comparisons
+int main_25i() {
+    double i = 0.0;
+    for (int j = 0; i != 8.0; j++) {
+        if (i==8.0) {
+            cout << "Hello!" << endl;
+        }
+        if (i>7.91 && i < 8.09) {
+            cout << "Hi!" << endl;
+        }
+        cout << i << endl;
+        i += 0.1;
+        if (i > 11) {
+            break;
+        }
+    }
+    return 0;
+}
