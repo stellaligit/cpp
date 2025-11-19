@@ -649,3 +649,20 @@ int main_26() {
     cout << a[0];
     return 0;
 }
+
+
+// ++i vs i++
+int main_27() {
+    int a = 0;
+    for (int i = 0; i < 5; i++) { // here the i++ is calculated after the below
+        // cout << i << endl;
+        cout << a++ << endl;
+    }
+    a = 0;
+    cout << "NEXT" << endl;
+    for (int i = 0; i < 5; ++i) {
+        // cout << i << endl;
+        cout << ++a << endl;
+    }
+    return 0;
+}
