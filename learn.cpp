@@ -666,3 +666,12 @@ int main_27() {
     }
     return 0;
 }
+
+int main_28() {
+    const int n = 100;
+    int a[n] = {};
+    for (int i=0; i< 5; i++) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
