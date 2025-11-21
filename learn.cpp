@@ -675,3 +675,18 @@ int main_28() {
     }
     return 0;
 }
+
+int main_29() {
+    int a[100] = {};
+    int x, n = 0;
+    while (true) {
+        cin >> a[n++];
+        if (a[n-1] == 1) {
+            break;
+        }  
+    }
+    for (int i=n-1; i>=0; i--) {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
