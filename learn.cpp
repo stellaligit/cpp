@@ -690,3 +690,21 @@ int main_29() {
     }
     return 0;
 }
+
+int main_30() {
+    int n, k;
+    cin >> n >> k;
+
+    bool a[1000] = {};
+    for (int i = 1; i <= k; i++) {
+        for (int j = i-1; j < n; j+=i) {
+            a[j] = !a[j];
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (a[i]) {
+            cout << i+1 << ' ';
+        }
+    }
+    return 0;
+}
