@@ -708,3 +708,66 @@ int main_30() {
     }
     return 0;
 }
+
+int main_31() {
+    int n;
+    cin >> n;
+
+    int a[10][10] = {};
+    for (int i = 0; i < n+2; i++) {
+        // horizontal top
+        a[0][i] = 1;
+        // horizontal bottom
+        a[n+1][i] = 1;
+        // vertical left
+        a[i][0] = 1;
+        // vertical right
+        a[i][n+1] = 1;
+    }
+
+    int x = n;
+    int y = 1;
+    int dir = 1;
+
+    for (int i = 1; i<= n*n; i++) {
+        a[y][x] = i;
+        if (dir == 1) { // down
+            if (a[y+1][x] == 0) {
+                y += 1;
+            } else {
+                x -= 1;
+                dir = 2;
+            }
+        } else if (dir == 2) { // left
+            if (a[y][x-1] == 0) {
+                x -= 1;
+            } else {
+                y -= 1;
+                dir = 3;
+            }
+        } else if (dir == 3) { // up
+            if (a[y-1][x] == 0) {
+                y -= 1;
+            } else {
+                x += 1;
+                dir = 4;
+            }           
+        } else if (dir == 4) { // right
+            if (a[y][x+1] == 0) {
+                x += 1;
+            } else {
+                y += 1;
+                dir = 1;
+            }
+        }
+    }
+    // row
+    for (int i = 1; i < n+1; i++) {
+        // column
+        for (int j = 1; j < n; j++) {
+            cout << a[i][j] << ' ';
+        }
+        cout << a[i][n] << endl;
+    }
+    return 0;
+}
