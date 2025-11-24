@@ -771,3 +771,20 @@ int main_31() {
     }
     return 0;
 }
+
+bool valid(int x, int digitFlag[]) {
+    if (x < 0) {
+        return false;
+    }
+    if (x == 0) {
+        return digitFlag[0] == 1;
+    }
+    while (x > 0) {
+        int digit = x%10;
+        if (digitFlag[digit] == 0) {
+            return false;
+        }
+        x /= 10;
+    }
+    return true;
+}
