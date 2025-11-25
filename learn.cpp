@@ -788,3 +788,108 @@ bool valid(int x, int digitFlag[]) {
     }
     return true;
 }
+
+
+int main_32() {
+    int n;
+    cin >> n;
+    int digitFlag[10] = {0};
+    while (n > 0) {
+        int x = n % 10;
+        digitFlag[x] = 1;
+        n /= 10;
+    }
+
+    int a1, a2, a3, b1, b2;
+
+    int answers = 0;
+    for (a1 = 1; a1 < 10; a1++) {
+        if (digitFlag[a1] == 0) {
+            continue;
+        }
+        for (a2 = 1; a2 < 10; a2++) {
+            if (digitFlag[a2] == 0) {
+                continue;
+            }
+            for (a3 = 1; a3 < 10; a3++) {
+                if (digitFlag[a3] == 0) {
+                    continue;
+                }
+                for (b1 = 1; b1 < 10; b1++) {
+                    if (digitFlag[b1] == 0) {
+                        continue;
+                    }
+                    for (b2 = 0; b2 < 10; b2++) {
+                        if (digitFlag[b2] == 0) {
+                            continue;
+                        }
+                        int v1 = a1 * 100 + a2 * 10 + a3;
+                        int v2 = b1 * 10 + b2;
+
+                        int sum1 = v1 * b2;
+                        int sum2 = v1 * b1;
+                        int sum = sum1 + sum2 * 10;
+                        if (valid(sum1, digitFlag) && valid(sum2, digitFlag) && valid(sum, digitFlag)) {
+                            answers++;
+
+                            // cout << a1 << a2 << a3 << " * " << b1 << b2 << " = " << sum1 << " + " << sum2 << " = " << sum << endl;
+                            int d;
+                            if (sum / 10000 >= 1) {
+                                d = 5;
+                            } else {
+                                d = 4;
+                            }
+
+                            if (d == 5) {
+                                cout << "  " << a1 << a2 << a3 << endl;
+                                cout << "X  " << b1 << b2 << endl;
+                                cout << "-----" << endl;
+                            } else if (d == 4) {
+                                cout << " " << a1 << a2 << a3 << endl;
+                                cout << "X " << b1 << b2 << endl;
+                                cout << "----" << endl;
+                            }
+
+                            if (sum1 / 1000 >= 1) { // sum 1 is four digits
+                                if (d == 5) {
+                                    cout << " " << sum1 << endl;
+                                } else if (d == 4) {
+                                    cout << sum1 << endl;
+                                }
+                            } else { // sum 1 is three digits
+                                if (d == 5) {
+                                    cout << "  " << sum1 << endl;
+                                } else if (d == 4) {
+                                    cout << " " << sum1 << endl;
+                                }
+                            }
+
+                            cout << sum2;
+                            if (sum2 / 1000 >= 1) { // sum 2 is four digits
+                                if (d == 5) {
+                                    cout << " ";
+                                }
+                            } else { // sum 2 is three digits
+                                if (d == 5) {
+                                    cout << "  ";
+                                } else if (d == 4) {
+                                    cout << " ";
+                                }                          
+                            }
+                            cout << endl;
+
+                            if (d == 5) {
+                                cout << "-----" << endl;
+                            } else if (d == 4) {
+                                cout << "----" << endl;
+                            }
+                            cout << sum << endl;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    cout << "The number of solutions = " << answers << endl;
+    return 0;
+}
