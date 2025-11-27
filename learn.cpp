@@ -893,3 +893,49 @@ int main_32() {
     cout << "The number of solutions = " << answers << endl;
     return 0;
 }
+
+int main_33() {
+    string c = "";
+    vector <string> a;
+    while (getline(cin, c)) {
+        a.push_back(c);
+    }
+    string b = "";
+    for (string x : a) {
+        b = b + x + "\r\n";
+    }
+
+    vector <char> r;
+    char prev = '\0'; // \0 is special it doesnt show up
+    int pairs = 0;
+    for (char ch : b) {        
+        if (prev == '\'' && ch == '\'') {
+            pairs++;
+            if (pairs % 2 == 1) {
+                prev = '`';
+                ch = '`';
+            }
+        }
+        if (prev != '\0') {
+            r.push_back(prev);
+        }
+        prev = ch;
+    }
+
+    for (char c : r) {
+        cout << c;
+    }
+    return 0;
+}
+
+/*
+test cases: 
+She said ''my name's stella'' and, ''hello.''
+''Hello I have 0 oranges'' she said''goodbye''
+
+''hi'' and ''
+hello world
+i'm doesn't he's
+'''hello'''
+''''''
+*/
