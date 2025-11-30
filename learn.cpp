@@ -939,3 +939,31 @@ i'm doesn't he's
 '''hello'''
 ''''''
 */
+
+int main_34() {
+    map<char, char> c = { {'W', 'Q'},
+    {'E', 'W'},
+    {'R', 'E'},
+    {'T', 'R'},
+    {'Y', 'T'} };
+    string a;
+    getline(cin, a);
+    for (char i : a) {
+        if (i == ' ') {
+            cout << i;
+        } else {
+            cout << c[i];
+        }
+    }
+    return 0;
+}
+
+/*
+    'Q'
+    {'W', 'Q'},
+    {'E', 'W'},
+    {'R', 'E'},
+    {'T', 'R'},
+    {'Y', 'T'}
+          'Y'
+*/
