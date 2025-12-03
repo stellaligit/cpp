@@ -967,3 +967,50 @@ int main_34() {
     {'Y', 'T'}
           'Y'
 */
+
+int main_35() {
+    string t = "";
+    vector <string> a;
+    while (getline(cin, t)) {
+        // break after empty line
+        if (t == "") {
+            break;
+        }
+        a.push_back(t);
+    }
+    
+    map<char, char> m = { {'A', 'A'}, {'E', '3'}, {'H', 'H'},
+        {'I', 'I'}, {'J', 'L'}, {'L', 'J'}, {'M', 'M'}, {'O', 'O'}, {'S', '2'}, 
+        {'T', 'T'}, {'U', 'U'}, {'V', 'V'}, {'W', 'W'}, {'X', 'X'}, {'Y', 'Y'}, 
+        {'Z', '5'}, {'0', '0'}, {'1', '1'}, {'2', 'S'}, {'3', 'E'}, {'5', 'Z'}, {'8', '8'} };
+    // cout << "'" << (m['B'] == m['K']) << "'" << endl; (it's true)
+    
+    for (string s : a) {
+        bool palindrome = true;
+        bool mirrored = true;
+        int n = s.length();
+        for (int i = 0; i <= (n/2+1); i++) {
+            if (palindrome != true && mirrored != true) {
+                break;
+            }
+            if (palindrome && s[i] != s[n-i-1]) {
+                palindrome = false;
+            }
+            if (mirrored && m[s[i]] != s[n-i-1]) {
+                mirrored = false;
+            }
+        }
+        if (palindrome) {
+            if (mirrored) {
+                cout << s << " -- is a mirrored palindrome." << endl;
+            } else {
+                cout << s << " -- is a regular palindrome." << endl;
+            }
+        } else if (mirrored) {
+            cout << s << " -- is a mirrored string." << endl;
+        } else {
+            cout << s << " -- is not a palindrome." << endl;
+        }
+    }
+    return 0;
+}
