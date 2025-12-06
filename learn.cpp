@@ -1014,3 +1014,19 @@ int main_35() {
     }
     return 0;
 }
+
+int test_36() {
+    map<char, int> a = { {'a', 1}, {'b', 0} };
+    cout << "'" << a['e'] << "'" << endl; // "0"
+
+    map<char, bool> b = { {'a', true}, {'b', false} };
+    cout << "'" << b['a'] << "'" << endl; // "1"
+    cout << "'" << b['e'] << "'" << endl; // "0" by doing this you assign a value of b['e'] to false.
+    if (b.count('b') == 0) {
+        cout << b.count('a') << " " << b.count('b') << endl;
+    }
+    if (b.find('e') == b.end()) {
+        cout << "no";
+    }
+    return 0;
+}
