@@ -1030,3 +1030,67 @@ int test_36() {
     }
     return 0;
 }
+
+int main_36() {
+    int game = 0;
+    while (true) {
+        int n;
+        cin >> n;
+        if (n == 0) {
+            break;
+        }
+
+        vector <int> a;
+        int m;
+        for (int i = 0; i < n; i++) {
+            cin >> m;
+            a.push_back(m);
+        }
+  
+        cout << "Game " << ++game << ":" << endl;
+        for (;;) {
+            vector <int> b;
+            vector <bool> flag;
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                cin >> m;
+                b.push_back(m);
+                flag.push_back(false);
+                if (m == 0) {
+                    count++;
+                }
+            }
+            if (count == n) {
+                break;
+            }
+
+            int same = 0;
+            int exist = 0;
+            vector <int> c;
+            for (int i = 0; i < n; i++) {
+                if (a[i] == b[i]) {
+                    same++;
+                    flag[i] = true;
+                } else {
+                    c.push_back(a[i]);
+                }
+            }
+            
+            for (int i = 0; i < n; i++) {
+                if (!flag[i]) {
+                    //auto = vector <int>::iterator
+                    auto it = find(c.begin(), c.end(), b[i]);
+                    // auto = int;
+                    // auto x = exist;
+                    if (it != c.end()) {
+                        exist++;
+                        c.erase(it);
+                    }
+                }
+
+            }
+            cout << "\t (" << same << "," << exist << ")" << endl;
+        }
+    }
+    return 0;
+}
