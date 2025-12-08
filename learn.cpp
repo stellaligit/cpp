@@ -1094,3 +1094,44 @@ int main_36() {
     }
     return 0;
 }
+
+// find the smallest num where the num + the sum of its digits = inputted value
+
+bool test_37a(int n, int k, int *a) {
+    int x;
+    if (k == 0) {
+        return false;
+    } else if (k == 1) {
+        x = 2;
+    } else if (k == 2) {
+        x = 11;
+    } else if (k == 3) {
+        x = 101;
+    } else if (k == 4) {
+        x = 1001;
+    } else if (k == 5) {
+        x = 10001;
+    }
+
+    int maxi = n/x;
+    if (maxi > 9) {
+        maxi = 9;
+    }
+    int mini = (n - k*9)/x;
+    if (mini > 9) {
+        mini = 9;
+    }
+
+    for (int t = mini; t <= maxi; t++) {
+        int m = n - t*x;
+        a[k-1] = t;
+
+        if (m == 0) {
+            return true;
+        } 
+        if (test_37a(m, k-1, a)) {
+            return true;
+        }
+    }
+    return false;
+}
