@@ -1135,3 +1135,36 @@ bool test_37a(int n, int k, int *a) {
     }
     return false;
 }
+
+int main_37a() {
+    int n;
+    cin >> n;
+
+    int k;
+    if (n >= 10000) {
+        k = 5;
+    } else if (n >= 1000) {
+        k = 4;
+    } else if (n >= 100) {
+        k = 3;
+    } else if (n >= 10) {
+        k = 2;
+    } else {
+        cout << "0" << endl;
+        return 0;
+    }
+
+    int a[5] = {0};
+    if (!test_37a(n, k, a)) {
+        cout << "0" << endl;
+        return 0;
+    }
+    if (a[k-1] != 0) {
+        cout << a[k-1];
+    }
+    for (int i = k-2; i >= 0; i--) {
+        cout << a[i];
+    }
+    cout << endl;
+    return 0;
+}
