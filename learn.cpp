@@ -1168,3 +1168,34 @@ int main_37a() {
     cout << endl;
     return 0;
 }
+
+int main_37b() {
+    int n;
+    cin >> n;
+
+    int k;
+    if (n == 100000) {
+        k = 6;
+    } else if (n >= 10000) {
+        k = 5;
+    } else if (n >= 1000) {
+        k = 4;
+    } else if (n >= 100) {
+        k = 3;
+    } else if (n >= 10) {
+        k = 2;
+    } else {
+        k = 1;
+    }
+
+    int ans = 0;
+    for (int i = n - 9*k; i < n; i++) {
+        int sum = i%10 + (i/10)%10 + (i/100)%10 + (i/1000)%10 + (i/10000)%10;
+        if (i+sum == n) {
+            ans = i;
+            break;
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}
