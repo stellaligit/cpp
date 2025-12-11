@@ -1199,3 +1199,35 @@ int main_37b() {
     cout << ans << endl;
     return 0;
 }
+
+// given a string, find the alphabetically lowest string with the same length starting at any char in the string
+int main_38() {
+    string s;
+    cin >> s;
+    int n = s.length();
+
+    int h1 = 0;
+    for (int h2 = 1; h2 < n; h2++) {
+        int c = 0;
+        int p1 = h1;
+        int p2 = h2;
+
+        while (s[p1] == s[p2]) {
+            if (++c == n) {
+                break;
+            }
+            p1 = (h1+c)%n;
+            p2 = (h2+c)%n;
+        }
+
+        if (s[p1] > s[p2]) {
+            h1 = h2;
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << s[(h1+i)%n];
+    }
+    cout << endl;
+    return 0;
+}
