@@ -1231,3 +1231,20 @@ int main_38() {
     cout << endl;
     return 0;
 }
+
+// for an array like OOXXOXXOOO = 1+2+0+0+1+0+0+1+2+3.
+int main_39() {
+    string s;
+    cin >> s;
+    int ans = 0;
+    int count = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == 'X') {
+            count = 0;
+        } else if (s[i] == 'O') {
+            ans += ++count;
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}
