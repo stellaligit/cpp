@@ -1248,3 +1248,44 @@ int main_39() {
     cout << ans << endl;
     return 0;
 }
+
+int main_40() {
+    string s;
+    cin >> s;
+    double c = 12.01;
+    double h = 1.008;
+    double o = 16.00;
+    double n = 14.01;
+    
+    double val = 0;
+    int multi = 1;
+    int streak = 0;
+    for (int i = s.length()-1; i >= 0; i--) {
+        if (s[i] == 'C') {
+            val += multi*c;
+            multi = 1;
+            streak = 0;
+        } else if (s[i] == 'H') {
+            val += multi*h;
+            multi = 1;
+            streak = 0;
+        } else if (s[i] == 'O') {
+            val += multi*o;
+            multi = 1;
+            streak = 0;
+        } else if (s[i] == 'N') {
+            val += multi*n;
+            multi = 1;
+            streak = 0;
+        } else {
+            if (streak == 0) {
+                multi = 0;
+            }
+            int num = s[i] - '0';
+            multi += num*(pow(10, streak));
+            streak++;
+        }
+    }
+    cout << val << "g/mol" << endl;
+    return 0;
+}
