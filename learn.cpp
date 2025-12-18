@@ -1289,3 +1289,31 @@ int main_40() {
     cout << val << "g/mol" << endl;
     return 0;
 }
+
+// given a number n, we write out a list from 1-n like: 1234567891011121314151617...n. count how many 1s, 2s, 3s, ... 9s, are there.
+int main_41a(int n) {
+    // int n;
+    // cin >> n;
+    int m[10] = {0};
+
+    int a = n;
+    for (int i = 1; a > 0; i++) {
+        // pv stands for place value
+        int pv = pow(10, i-1);
+        for (int j = 0; j < 10; j++) {
+            m[j] += n/(pv*10) * pv;
+        }
+        int current = (n/pv)%10;
+        for (int j = 0; j < current; j++) {
+            m[j] += pv;
+        }
+        m[0] -= pv;
+        m[current] += (n%pv + 1);
+
+        a /= 10;
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << i << ": " << m[i] << endl;
+    }
+    return 0;
+}
